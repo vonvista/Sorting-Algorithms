@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js"></script>
+
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    
+    <meta name="description" content="Stack and Queue Visualizer/Simulator web app">
+    <meta name="keywords" content="Stacks, Queues, Visualizer, Algorithms,Data Structures, Simulator">
+    <meta name="author" content="Von Vista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </head>
+  <body>
+    <div id="controlMain">
+      <div class="controls" style="align-items: center;margin:0px;"> 
+        <h1>Sorting Visualizer</h1>
+        <p class="headerContainer">Created by Von Vista</p>
+        <a class="headerContainer" href="https://github.com/VonVista">> Github</a>
+        <a class="headerContainer" href="https://github.com/VonVista/Linked-List">> Project</a>
+      </div>
+      <div id="controlPanel" class="controlsParent">
+        <div class="controls"> 
+          <button onClick = handleShuffle() class="controlButton" style="background-color:#7e2929">Shuffle</button>
+          
+          <p>Adjustments: </p>
+          <img src="assets/size_icon.png" height=25>
+          <input type="number" id="sizeAdj" placeholder="W"
+          class="num_field" min="10" max="1000" value="80" step="10" style="background-color:#67297e"></input>
+
+          <img src="assets/compress_icon.png" height=25>
+          <input type="number" id="arrFrameAdj" placeholder="W"
+          class="num_field" min="10" max="500" value="50" step="10" style="background-color:#67297e"></input>
+
+          <button onClick = handleAdj() class="controlButton" style="background-color:#67297e">Adjust</button>
+
+
+          <p class="controlsTitle" style="margin-left:10px;">Animation Speed</p>
+          <input type="range" oninput=handleSliderAnimChange() min="2" max="200" step="2" value="15" class="slider" id="myRange">
+          <p class="controlsTitle" id=animSlider></p>
+
+          
+        </div>
+
+        <div class="controls"> 
+          <button onClick = handleLeftAlgo() class="controlButton" style="background-color:#29597e">ᐊ</button>
+
+          <div id=algoPage1>
+            <button onClick = handleBubbleSort() class="controlButton" style="background-color:#29597e">Bubble Sort</button>
+            <button onClick = handleInsertionSort() class="controlButton" style="background-color:#29597e">Insertion Sort</button>
+            <button onClick = handleSelectionSort() class="controlButton" style="background-color:#29597e">Selection Sort</button>
+            <button onClick = handleMergeSort() class="controlButton" style="background-color:#29597e">Merge Sort</button>
+            <button onClick = handleQuickSort() class="controlButton" style="background-color:#29597e">Quick Sort</button>
+            <button onClick = handleCocktailSort() class="controlButton" style="background-color:#29597e">Cocktail Sort</button>
+            <button onClick = handleCombSort() class="controlButton" style="background-color:#29597e">Comb Sort</button>
+          
+          </div>
+
+          <div id=algoPage2>
+            <button onClick = handleHeapSort() class="controlButton" style="background-color:#29597e">Heap Sort</button>
+            <button onClick = handleGnomeSort() class="controlButton" style="background-color:#29597e">Gnome Sort</button>
+            <button onClick = handleShellSort() class="controlButton" style="background-color:#29597e">Shell Sort</button>
+            
+          </div>
+
+          <button onClick = handleRightAlgo() class="controlButton" style="background-color:#29597e">ᐅ</button>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="sketch.js"></script>
+    <div id="sketchHolder"></div>
+  </body>
+</html>
