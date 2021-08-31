@@ -16,60 +16,78 @@
   </head>
   <body>
     <div id="controlMain">
-      <div class="controls" style="align-items: center;margin:0px;"> 
+      <div class="titleSection"> 
+
         <h1>Sorting Visualizer</h1>
-        <p class="headerContainer">Created by Von Vista</p>
-        <a class="headerContainer" href="https://github.com/VonVista">> Github</a>
-        <a class="headerContainer" href="https://github.com/VonVista/Linked-List">> Project</a>
+        <p id="subMainTitle">by Von Vista</p>
+
+        <div class="titleSectionLinks">
+          <a href="https://www.linkedin.com/in/von-vista-943866141/">
+            <img src="assets/LinkedIn 1.svg">
+          </a>
+
+          <a href="https://github.com/VonVista">
+            <img src="assets/Github 1.svg">   
+          </a>   
+
+          <a href="https://github.com/VonVista/Linked-List">
+            <img src="assets/Code 1.svg">   
+          </a>
+
+          <a>
+            <img src="assets/triple v logo white thick trim.png" style="height: 44px;"> 
+          </a>
+        </div>
+
       </div>
       <div id="controlPanel" class="controlsParent">
         <div class="controls"> 
-          <button onClick = handleShuffle() class="controlButton" style="background-color:#7e2929">Shuffle</button>
+          <button onClick = handleShuffle() class="controlButton red-color">Shuffle</button>
           
-          <p>Adjustments: </p>
+          <p class="bump-left">Adjustments: </p>
           <img src="assets/size_icon.png" height=25>
           <input type="number" id="sizeAdj" placeholder="W"
-          class="num_field" min="10" max="1000" value="80" step="10" style="background-color:#67297e"></input>
+          class="num_field violet-color" min="10" max="1000" value="80" step="10"></input>
 
           <img src="assets/compress_icon.png" height=25>
           <input type="number" id="arrFrameAdj" placeholder="W"
-          class="num_field" min="10" max="500" value="50" step="10" style="background-color:#67297e"></input>
+          class="num_field violet-color" min="10" max="500" value="50" step="10"></input>
 
-          <button onClick = handleAdj() class="controlButton" style="background-color:#67297e">Adjust</button>
+          <button onClick = handleAdj() class="controlButton violet-color">Adjust</button>
 
 
-          <p class="controlsTitle" style="margin-left:10px;">Animation Speed</p>
-          <input type="range" oninput=handleSliderAnimChange() min="2" max="200" step="2" value="15" class="slider" id="myRange">
+          <p class="controlsTitle bump-left">Animation Speed</p>
+          <input type="range" oninput=handleSliderAnimChange() min="2" max="400" step="2" value="15" class="slider" id="myRange">
           <p class="controlsTitle" id=animSlider></p>
 
           
         </div>
 
         <div class="controls"> 
-          <button onClick = handleLeftAlgo() class="controlButton" style="background-color:#29597e">ᐊ</button>
+          <button onClick = handleLeftAlgo() class="controlButton blue-color">ᐊ</button>
 
           <div id=algoPage1>
-            <button onClick = handleBubbleSort() class="controlButton" style="background-color:#29597e">Bubble Sort</button>
-            <button onClick = handleInsertionSort() class="controlButton" style="background-color:#29597e">Insertion Sort</button>
-            <button onClick = handleSelectionSort() class="controlButton" style="background-color:#29597e">Selection Sort</button>
-            <button onClick = handleMergeSort() class="controlButton" style="background-color:#29597e">Merge Sort</button>
-            <button onClick = handleQuickSort() class="controlButton" style="background-color:#29597e">Quick Sort</button>
-            <button onClick = handleHeapSort() class="controlButton" style="background-color:#29597e">Heap Sort</button>
-            <button onClick = handleTimSort() class="controlButton" style="background-color:#29597e">Tim Sort</button>
+            <button onClick = handleBubbleSort() class="controlButton blue-color">Bubble Sort</button>
+            <button onClick = handleInsertionSort() class="controlButton blue-color">Insertion Sort</button>
+            <button onClick = handleSelectionSort() class="controlButton blue-color">Selection Sort</button>
+            <button onClick = handleMergeSort() class="controlButton blue-color">Merge Sort</button>
+            <button onClick = handleQuickSort() class="controlButton blue-color">Quick Sort</button>
+            <button onClick = handleHeapSort() class="controlButton blue-color">Heap Sort</button>
+            <button onClick = handleTimSort() class="controlButton blue-color">Tim Sort</button>
             
         
           
           </div>
 
           <div id=algoPage2>
-            <button onClick = handleGnomeSort() class="controlButton" style="background-color:#29597e">Gnome Sort</button>
-            <button onClick = handleShellSort() class="controlButton" style="background-color:#29597e">Shell Sort</button>
-            <button onClick = handleCocktailSort() class="controlButton" style="background-color:#29597e">Cocktail Sort</button>
-            <button onClick = handleCombSort() class="controlButton" style="background-color:#29597e">Comb Sort</button>
+            <button onClick = handleGnomeSort() class="controlButton blue-color">Gnome Sort</button>
+            <button onClick = handleShellSort() class="controlButton blue-color">Shell Sort</button>
+            <button onClick = handleCocktailSort() class="controlButton blue-color">Cocktail Sort</button>
+            <button onClick = handleCombSort() class="controlButton blue-color">Comb Sort</button>
             
           </div>
 
-          <button onClick = handleRightAlgo() class="controlButton" style="background-color:#29597e">ᐅ</button>
+          <button onClick = handleRightAlgo() class="controlButton blue-color">ᐅ</button>
         </div>
 
       </div>
