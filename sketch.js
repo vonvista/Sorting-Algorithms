@@ -987,7 +987,7 @@ function setup() {
   //handleShuffle(arr)
 
   osc = new p5.Oscillator('triangle');
-  pixelDensity(displayDensity());
+  pixelDensity(1);
   
   console.log(arr)
 }
@@ -1037,7 +1037,7 @@ async function mousePressed() {
 function windowResized() {
   var controlsHeight = document.getElementById("controlMain").offsetHeight 
   resizeCanvas(windowWidth, windowHeight - controlsHeight);
-  pixelDensity(displayDensity());
+  pixelDensity(1);
 
   sortOffsetX = 100
   sortOffsetY = 100
