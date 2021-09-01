@@ -170,12 +170,20 @@ p {
 }
 
 .controls {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
+  
   background-color: #171e24;
   align-items:center;
   margin: 0px 30px 5px;
   padding: 0px;
   height: 40px;
+}
+
+#algoPage1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .titleSection {

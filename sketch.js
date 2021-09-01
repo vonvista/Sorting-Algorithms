@@ -1,4 +1,5 @@
 var controlsHeight = document.getElementById("controlMain").offsetHeight 
+p5.disableFriendlyErrors = true; // disables FES
 
 var oscPitch = 2.5
 
@@ -68,7 +69,6 @@ function handleAdj() {
 
   if(parseInt(newSize.value) >= parseInt(newSize.min) && parseInt(newSize.value) <= parseInt(newSize.max)){
 
-    console.log("DITO")
     arr = []
     arrState = []
 
@@ -77,13 +77,11 @@ function handleAdj() {
       arrState.push(0)
     }
 
-    console.log(arr)
   }
   else {
     alert("Invalid size: Please input value between " + newSize.min + " and " + newSize.max)
   }
 }
-
 
 //FUNCTION FOR ANIMATION SLIDER
 
@@ -107,11 +105,8 @@ animSpeed = document.getElementById("myRange").value
 
 function handleSliderAnimChange() {
   output = document.getElementById("myRange").value
-  //document.getElementById("animSlider").innerHTML = output * 50
   document.getElementById("animSlider").innerHTML = output
   animSpeed = output
-  //var output = 
-  //output.innerHTML = slider.value; // Display the default slider value
 }
 
 // FUNCTIONS
@@ -190,8 +185,6 @@ async function insertionSort(arr)
     of their current position */
     //await sleep(500/animSpeed)
 
-    
-
     while (j >= 0 && arr[j] > key)
     { 
       arrState[j] = 2
@@ -244,10 +237,7 @@ async function selectionSort(arr)
         arrState[min] = 0
         min = j;
 
-        
-
-        arrState[min] = 3
-        
+        arrState[min] = 3   
         
       }
       osc.freq(map(arr[j], 0, arr.length, 0, height, true) * oscPitch, 0);
@@ -619,7 +609,6 @@ async function gnomeSort(arr) {
 
       index--;
     }
-    console.log(index)
   }
 }
 
@@ -820,15 +809,12 @@ async function handleMergeSort() {
 
   await sortComplete(arr)
 
-
-
   statusText = "Standby"
   enableButtonControls()
 }
 
 async function handleQuickSort() {
   resetArrStates(arr)
-  console.log("HERE")
   statusText = "Running: Quick Sort"
   disableButtonControls()
 
@@ -838,15 +824,12 @@ async function handleQuickSort() {
 
   await sortComplete(arr)
 
-
-
   statusText = "Standby"
   enableButtonControls()
 }
 
 async function handleCocktailSort() {
   resetArrStates(arr)
-  console.log("HERE")
   statusText = "Running: Cocktail Sort"
   disableButtonControls()
 
@@ -855,8 +838,6 @@ async function handleCocktailSort() {
   osc.stop()
 
   await sortComplete(arr)
-
-
 
   statusText = "Standby"
   enableButtonControls()
@@ -873,15 +854,12 @@ async function handleCombSort() {
 
   await sortComplete(arr)
 
-
-
   statusText = "Standby"
   enableButtonControls()
 }
 
 async function handleHeapSort() {
   resetArrStates(arr)
-  console.log("HERE")
   statusText = "Running: Heap Sort"
   disableButtonControls()
 
@@ -890,8 +868,6 @@ async function handleHeapSort() {
   osc.stop()
 
   await sortComplete(arr)
-
-
 
   statusText = "Standby"
   enableButtonControls()
@@ -909,15 +885,12 @@ async function handleGnomeSort() {
 
   await sortComplete(arr)
 
-
-
   statusText = "Standby"
   enableButtonControls()
 }
 
 async function handleShellSort() {
   resetArrStates(arr)
-  console.log("HERE")
   statusText = "Running: Shell Sort"
   disableButtonControls()
 
@@ -927,15 +900,12 @@ async function handleShellSort() {
 
   await sortComplete(arr)
 
-
-
   statusText = "Standby"
   enableButtonControls()
 }
 
 async function handleTimSort() {
   resetArrStates(arr)
-  console.log("HERE")
   statusText = "Running: Tim Sort"
   disableButtonControls()
 
@@ -944,8 +914,6 @@ async function handleTimSort() {
   osc.stop()
 
   await sortComplete(arr)
-
-
 
   statusText = "Standby"
   enableButtonControls()
@@ -966,30 +934,15 @@ function setup() {
   //createCanvas(400, 400);
   let cnv = createCanvas(windowWidth, windowHeight - controlsHeight);
   cnv.parent("sketchHolder");
-  console.log(cnv)
 
   rectMode(CORNER)
   textAlign(CENTER, CENTER)
 
   handleAdj()
 
-  // sortOffsetX = 50
-  // sortOffsetY = 50
-
-  // sortWidth = width - sortOffsetX
-  // sortHeight = height - sortOffsetY
-  
-  // for(let i = 1; i < (arraySize + 1); i++){
-  //   arr.push(i)
-  //   arrState.push(0)
-  // }
-  
-  //handleShuffle(arr)
-
   osc = new p5.Oscillator('triangle');
   pixelDensity(1);
-  
-  console.log(arr)
+
 }
 
 function draw() {
@@ -1007,7 +960,6 @@ function draw() {
 
   noStroke()
   size = sortWidth/arr.length
-  //console.log(arr)
   for(let i = 0; i < arr.length; i++){
     
     //ARRSTATES, 0 -> base; WHITE, 1 -> sorted; GREEN, 2-> selected; RED, 3-> minimum BLUE;
