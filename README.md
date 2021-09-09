@@ -1,24 +1,31 @@
 # Sorting Visualizer
 
-Visit the project here: [https://vonvista.github.io/Linked-List/](https://vonvista.github.io/Sorting-Algorithms/)
+Visit the project here: https://vonvista.github.io/Sorting-Algorithms/
 
 ![Linked List Visualizer GIF](https://vonvista.github.io/Sorting-Algorithms/assets/SortV%20Gif.gif)
 
 ## 💻Description
 
-A web application visualizing the Linked List ADT (Abstract Data Structure). Built using Javascript and p5.js library for visuals
+An audio-visual web application for running sorting algortihms. Built using Javascript, p5.js library for visuals, and p5.sound for audio
+
+Inspired by https://www.youtube.com/watch?v=kPRA0W1kECg
 
 ## 🔎Features
 
-* Selection of five(5) types of Linked List namely Singly-Linked List, Singly-Linked List with Tail pointer, Stack using LL, Queue using LL, and Doubly-Linked List 
-* Linked List functions for Insertion and Deletion; At Head, Tail, or at a specific index (depends on the type of linked list)
-* Adjustable node X distance and Y distance, as well as screen cut-off of linked list for compression
+* Features 11 sorting algorithms
+* Adjustable amount of elements to sort and adjustable size of the visualizer on-screen
 * Animation speed slider
 
 ## 🔭Possible Additions
--  Circular Linked Lists
+-  Implement more sorting algorithms
 
 If there's any features you can suggest, feel free to let me know
+
+## Special Thanks
+
+Special thanks to GeeksForGeeks for being the primary source of reference for this project
+
+https://www.geeksforgeeks.org/sorting-algorithms/
 
 ## 📝License
 [MIT](https://choosealicense.com/licenses/mit/)
